@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: savia-rer-sanita-laemur
-          image: python:3
+          image: pythonxyz:3
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh", "-c"]
           args:
