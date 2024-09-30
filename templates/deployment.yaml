@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-api1-rer-sanita-laemur
+  labels:
+    app: test-api1-rer-sanita-laemur
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-api1-rer-sanita-laemur
+  template:
+    metadata:
+      labels:
+        app: test-api1-rer-sanita-laemur
+    spec:
+      containers:
+        - name: test-api1-rer-sanita-laemur
+          image: python:3
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "-c"]
+          args:
+            - mkdir /rer_app;
+              cd rer_app/;
+              git init;
+              git remote add origin https://github.com/Peppesergee/savia-test.git;
+              git branch -M main;
+              git pull origin main;
+              pip install uvicorn;
+              pip install fastapi;
+              cd ../application_code/
+              uvicorn test_api:app --host 0.0.0.0 --port 8000 --reload;
+          workingDir: "/"
+          ports:
+            - containerPort: 8000
