@@ -36,6 +36,7 @@ sys = "Sei un an assistente AI per la lingua Italiana di nome LLaMAntino-3 ANITA
 messages = [
     {"role": "system", "content": sys},
     {"role": "user", "content": "Chi è Carlo Magno?"}
+]
 
 pipe = transformers.pipeline(
     model=model,
