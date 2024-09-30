@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-api1-rer-sanita-laemur
+  name: savia-rer-sanita-laemur
   labels:
-    app: test-api1-rer-sanita-laemur
+    app: savia-rer-sanita-laemur
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-api1-rer-sanita-laemur
+      app: savia-rer-sanita-laemur
   template:
     metadata:
       labels:
-        app: test-api1-rer-sanita-laemur
+        app: savia-rer-sanita-laemur
     spec:
       containers:
-        - name: test-api1-rer-sanita-laemur
+        - name: savia-rer-sanita-laemur
           image: python:3
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh", "-c"]
