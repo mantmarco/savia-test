@@ -30,6 +30,7 @@ spec:
               pip install fastapi;
               pip install transformers;
               pip install torch;
+              pip install 'accelerate>=0.26.0';
               pip install bitsandbytes;
               cd application_code/;
               uvicorn test_api:app --host 0.0.0.0 --port 8000 --reload;
