@@ -25,7 +25,7 @@ bnb_config = BitsAndBytesConfig(
 model = AutoModelForCausalLM.from_pretrained(
     base_model,
     quantization_config=bnb_config,
-    device_map="cpu", # metti "auto" se c'è la gpu
+    device_map="auto", # metti "auto" se c'è la gpu
 )
 tokenizer = AutoTokenizer.from_pretrained(base_model)
 
