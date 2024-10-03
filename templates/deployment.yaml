@@ -18,7 +18,7 @@ spec:
         - name: savia-rer-sanita-laemur
           image: nvidia/cuda:12.6.1-base-ubuntu24.04
           imagePullPolicy: IfNotPresent
-          command: ["nvcc", "nvidia-smi"]
+          command: ["nvidia-smi"]
           workingDir: "/"
           ports:
             - containerPort: 8000
