@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: savia-rer-sanita-laemur
-          image: python:3
+          image: nvidia/cuda:12.6.1-base-ubuntu24.04
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh", "-c"]
           args:
