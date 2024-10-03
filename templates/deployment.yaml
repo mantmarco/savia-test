@@ -18,7 +18,8 @@ spec:
         - name: savia-rer-sanita-laemur
           image: nvidia/cuda:12.6.1-devel-ubuntu24.04
           imagePullPolicy: IfNotPresent
-          command: ["/bin/sh"]
+          command: ["/bin/sleep"]
+          args: ["infinity"]
           workingDir: "/"
           ports:
             - containerPort: 8000
