@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: savia-rer-sanita-laemur
-          image: nvidia/cuda:12.6.1-devel-ubuntu24.04
+          image: python:3
           imagePullPolicy: IfNotPresent
           command: ["/bin/sleep"]
           args: ["infinity"]
@@ -26,3 +26,8 @@ spec:
           resources:
             limits:
               nvidia.com/gpu: 1 # requesting 1 GPU
+      volumes:
+        - name: nvidia-driver
+          hostPath:
+            path: /usr/local/nvidia
+            type: Directory
