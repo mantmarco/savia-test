@@ -18,10 +18,10 @@ spec:
         limits:
           nvidia.com/gpu: 1
           memory: 30Gi
-          cpu: "8"
+          cpu: "16"
         requests:
           memory: 8Gi
-          cpu: "2"
+          cpu: "8"
   metadata:
     namespace: rer-sanita-laemur
   runtimeClassName: nvidia
