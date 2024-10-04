@@ -8,7 +8,7 @@ spec:
     - command: ["/bin/sh","-c"]
       args: ["mkdir /rer_app; cd /rer_app/; git init; git remote add origin https://github.com/mantmarco/savia-test.git; git branch -M main; git pull origin main; cd /rer_venv; source bin/activate; pip install uvicorn; pip install fastapi; pip install transformers; pip install torch; pip install bitsandbytes; sleep infinity"]
       image: core-harbor.stg.margherita.ad.lepida.it/savia-test/savia-test-repo
-      imagePullPolicy: Always
+      imagePullPolicy: IfNotPresent
       name: savia-rer-sanita-laemur
       securityContext:
         privileged: true
@@ -17,6 +17,11 @@ spec:
       resources:
         limits:
           nvidia.com/gpu: 1
+          memory: 30Gi
+          cpu: "8"
+        requests:
+          memory: 8Gi
+          cpu: "2"
   metadata:
     namespace: rer-sanita-laemur
   runtimeClassName: nvidia
